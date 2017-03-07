@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 ]
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_SETTINGS = {
+    'autoParagraph': False
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
