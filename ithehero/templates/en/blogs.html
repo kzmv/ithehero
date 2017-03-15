@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<ul>
     {% for blog in blogs %}
-        {{ blog.title }}
+        <li>{{ blog.title }}</li>
     {% endfor %}
-{{ blog }}
+</ul>
 {% endblock %}
