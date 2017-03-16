@@ -3,6 +3,7 @@ from .models import Blog
 
 
 class BlogAdmin(ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("title",)}
+
 
 site.register(Blog, BlogAdmin)

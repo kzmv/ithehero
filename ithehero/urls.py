@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import index
+from .views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'$', index),
-    
-
+    url(r'^blog/(?P<slug>[\w\-]+)/$',blog, name='blog'),
+    url(r'^blogs/$',blogs, name='blogs'),
+    url(r'$', index, name="home"),
 ]

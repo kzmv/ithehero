@@ -1,3 +1,4 @@
+
 """
 Django settings for ithehero project on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
@@ -11,7 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import dj_database_url
-
+from npm import finders
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ithehero'
 ]
+
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 CKEDITOR_SETTINGS = {

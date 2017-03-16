@@ -3,7 +3,7 @@
 {% block content %}
 <ul>
     {% for blog in blogs %}
-        <li>{{ blog.title }}</li>
+        <li><a href="{% url 'blog' blog.slug %}">{{ blog.title }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
