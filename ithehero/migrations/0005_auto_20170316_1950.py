@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='blog',
             name='category',
-            field=models.CharField(choices=[('a', 'Article'), ('p', 'Project'), ('b', 'About')], default=('a', 'Article'), max_length=1),
+            field=models.CharField(choices=[('a', 'Article'), ('p', 'Project'), ('b', 'About')], default='a', max_length=1),
         ),
         migrations.AddField(
             model_name='blog',
