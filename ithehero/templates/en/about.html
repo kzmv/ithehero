@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-10 blog-main">
+
+            {% for blog in blogs %}
+            <div class="about-card">
+                <div class="about-title">
+                    {{blog.title}}
+                </div>
+                <div class="about-text">
+                    <div class="about-image"></div>
+                    {{blog.text|safe}}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div><!-- /.row -->
+</div>
+{% endblock %}

@@ -10,19 +10,68 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
-<div class="blog-masthead">
-      <div class="container">
-        <nav class="nav blog-nav">
-          <a class="nav-link active" href="{% url 'home' %}">Home</a>
-          <a class="nav-link" href="{% url 'blogs' %}" >Articles</a>
-          <a class="nav-link" href="#">Projects</a>
-          <a class="nav-link" href="#">Exhibits</a>
-          <a class="nav-link" href="#">About</a>
-        </nav>
-      </div>
-</div>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand"  href="{% url 'home' %}">I, The Hero</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blogs' %}">Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {% for blog in projects %}
+                <a class="dropdown-item" href="{% url 'project' blog.slug %}">{{ blog.title }}</a>
+            {% endfor %}
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+        <!--<nav class="navbar navbar-inverse">-->
+            <!--<div class="container-fluid">-->
+                <!--<div class="navbar-header">-->
+                  <!--<a class="navbar-brand" href="{% url 'home' %}">I, The Hero</a>-->
+                <!--</div>-->
+                <!--<ul class="nav navbar-nav">-->
+                  <!--<li class="active"><a href="{% url 'home' %}">Home</a></li>-->
+                  <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects-->
+                    <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--{% for blog in articles %}-->
+                            <!--<li><a href="#">{{ blog.title}}</a></li>-->
+                        <!--{% endfor %}-->
+                    <!--</ul>-->
+                  <!--</li>-->
+                  <!--<li ><a href="#">Articles</a></li>-->
+                  <!--<li ><a href="#">About</a></li>-->
+                  <!--<li class="nav-link dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Exhibits-->
+                    <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--{% for blog in exhibits %}-->
+                            <!--<li><a href="#">{{ blog.title}}</a></li>-->
+                        <!--{% endfor %}-->
+                    <!--</ul>-->
+                  <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</nav>-->
 {% block content %}
 
 

@@ -1,7 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
 
+    <div class="row">
 
+        <div class="col-sm-10 blog-main">
+            <div class="section-title">Latest Blogs:</div>
+            {% for blog in articles %}
+            <div class="summary-card">
+                <div class="summary-title">
+                    {{blog.title}}
+                </div>
+                <div class="summary-text">
+                    <div class="summary-image"></div>
+                    {{blog.description|safe}}
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="section-title">Projects:</div>
+            {% for blog in projects %}
+
+            <div class="summary-card">
+                <div class="summary-title">
+                    {{blog.title}}
+                </div>
+                <div class="summary-text">
+                    <div class="summary-image"></div>
+                    {{blog.description|safe}}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div><!-- /.row -->
+</div>
 {% endblock %}
 
