@@ -18,7 +18,7 @@ class Blog(models.Model):
 
     language = models.CharField(max_length=2,choices=[("en","English"), ("bg","Bulgarian")])
     published = models.BooleanField(default=True)
-    category = models.CharField(max_length=1, choices=CATEGORIES, default=('a','Article'))
+    category = models.CharField(max_length=1, choices=CATEGORIES, default='a')
     image = models.ImageField(upload_to="images",default="images/noimage.jpg")
 
 
