@@ -18,6 +18,10 @@ from django.contrib import admin
 from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.static import serve
+
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,5 +29,10 @@ urlpatterns = [
     url(r'^blogs/$',blogs, name='blogs'),
     url(r'^about/$',about, name='about'),
     url(r'^project/(?P<slug>[\w\-]+)/$',project, name='project'),
+    url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
     url(r'$', index, name="home")
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
