@@ -51,6 +51,8 @@ CKEDITOR_SETTINGS = {
     'autoParagraph': False
 }
 
+
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

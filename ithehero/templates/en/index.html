@@ -5,30 +5,36 @@
 
     <div class="row">
 
+
         <div class="col-sm-10 blog-main">
-            <div class="section-title">Latest Blogs:</div>
-            {% for blog in articles %}
-            <div class="summary-card">
-                <div class="summary-title">
-                    {{blog.title}}
-                </div>
-                <div class="summary-text">
-                    <div class="summary-image"></div>
-                    {{blog.description|safe}}
-                </div>
-            </div>
-            {% endfor %}
 
             <div class="section-title">Projects:</div>
             {% for blog in projects %}
 
             <div class="summary-card">
                 <div class="summary-title">
-                    {{blog.title}}
+                    <a href="url 'blog' blog.slug ">{{blog.title}}</a>
                 </div>
-                <div class="summary-text">
-                    <div class="summary-image"></div>
+                <div class="summary-text row">
+                    <div class="summary-image col-sm-4"></div>
+                    <div class="col-sm-7 summary-description">
                     {{blog.description|safe}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="section-title">Latest Blogs:</div>
+            {% for blog in articles %}
+            <div class="summary-card">
+                <div class="summary-title">
+                    <a href="url 'blog' blog.slug ">{{blog.title}}</a>
+                </div>
+                <div class="summary-text row">
+                    <div class="summary-image col-sm-4"></div>
+                    <div class="col-sm-7 summary-description">
+                    {{blog.description|safe}}
+                    </div>
                 </div>
             </div>
             {% endfor %}
