@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="container">
         <div class="top-buffer"></div>
@@ -7,14 +7,14 @@
     <div class="row">
 
 
-        <div class="col-sm-10 blog-main">
+        <div class=" blog-main">
 
             <div class="summary-card intro">
                 <div class="summary-title">
-                    <a href="url 'blog' intro.slug">{{intro.title}}</a>
+                    <a href="{% url 'blog' intro.slug %}">{{intro.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <div class="intro-image col-sm-4 "></div>
+                    <img class="intro-image col-sm-4" src="{% get_media_prefix %}{{ intro.image }}"/>
                     <div class="col-sm-7">
                     {{intro.text|safe}}
                     </div>
@@ -26,10 +26,11 @@
 
             <div class="summary-card">
                 <div class="summary-title">
-                    <a href="url 'blog' blog.slug ">{{blog.title}}</a>
+                    <a href="{% url 'blog' intro.slug %}">{{blog.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <div class="summary-image col-sm-4"></div>
+                    <img class="summary-image col-sm-4" src="{% get_media_prefix %}{{ blog.image }}"/>
+
                     <div class="col-sm-7 summary-description">
                     {{blog.description|safe}}
                     </div>
@@ -41,10 +42,10 @@
             {% for blog in articles %}
             <div class="summary-card">
                 <div class="summary-title">
-                    <a href="url 'blog' blog.slug ">{{blog.title}}</a>
+                    <a href="{% url 'blog' intro.slug %}">{{blog.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <div class="summary-image col-sm-4"></div>
+                    <img class="summary-image col-sm-4" src="{% get_media_prefix %}{{ blog.image }}"/>
                     <div class="col-sm-7 summary-description">
                     {{blog.description|safe}}
                     </div>
