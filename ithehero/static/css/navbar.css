@@ -25,6 +25,10 @@ body {
     height:50px;
 }
 
+.intro{
+    height: 420px !important;
+}
+
 .summary-image {
     float: left;
     height: 140px;
@@ -33,6 +37,21 @@ body {
     background-color: white;
     margin-right:15px;
 }
+
+.intro-image {
+    float: left;
+    height: 350px;
+    background: url(http://a0.twimg.com/profile_images/2231171301/red_square_nigel_tomm_m_normal.jpg);
+    margin-left: 15px;
+    background-color: white;
+    margin-right:15px;
+
+}
+
+.summary-image .intro{
+   height: 100px;
+}
+
 .summary-title{
 
     color: white;

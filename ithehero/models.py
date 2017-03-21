@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class Blog(models.Model):
 
-    CATEGORIES = (('a','Article'),('p','Project'),('b','About'))
+    CATEGORIES = (('a','Article'),('p','Project'),('b','About'),('i',"Intro"))
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, max_length=255)
     text = RichTextField()

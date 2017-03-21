@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .models import Blog
 
 def index(request):
+    intro = Blog.objects.filter(published=True,category="i")[0]
     articles = Blog.objects.filter(published=True,category="a")
     projects = Blog.objects.filter(published=True,category="p")
 
-    return render(request, 'en/index.html',{'articles': articles, 'projects': projects})
+    return render(request, 'en/index.html',{'articles': articles, 'projects': projects,'intro':intro})
 
 def blogs(request):
     blogs = Blog.objects.filter(published=True,category="a")
