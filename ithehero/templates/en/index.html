@@ -14,7 +14,9 @@
                     <a href="{% url 'blog' intro.slug %}">{{intro.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <img class="intro-image col-sm-4" src="{% get_media_prefix %}{{ intro.image }}"/>
+                    <div class="intro-image col-sm-4">
+                        <img class="image"  src="{% get_media_prefix %}{{ intro.image }}"/>
+                    </div>
                     <div class="col-sm-7">
                     {{intro.text|safe}}
                     </div>
@@ -29,8 +31,9 @@
                     <a href="{% url 'blog' intro.slug %}">{{blog.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <img class="summary-image col-sm-4" src="{% get_media_prefix %}{{ blog.image }}"/>
-
+                    <div class="summary-image col-sm-4">
+                        <img class="image" src="{% get_media_prefix %}{{ blog.image }}"/>
+                    </div>
                     <div class="col-sm-7 summary-description">
                     {{blog.description|safe}}
                     </div>
@@ -45,7 +48,9 @@
                     <a href="{% url 'blog' intro.slug %}">{{blog.title}}</a>
                 </div>
                 <div class="summary-text row">
-                    <img class="summary-image col-sm-4" src="{% get_media_prefix %}{{ blog.image }}"/>
+                    <div class="summary-image col-sm-4">
+                        <img class="image" src="{% get_media_prefix %}{{ blog.image }}"/>
+                    </div>
                     <div class="col-sm-7 summary-description">
                     {{blog.description|safe}}
                     </div>
