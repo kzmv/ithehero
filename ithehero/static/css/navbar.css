@@ -113,6 +113,7 @@ body {
     max-height: 140px;
     overflow: hidden;
     text-overflow: ellipsis !important;
+    word-wrap: break-word;
 }
 
 .summary-card {
@@ -164,4 +165,29 @@ body {
 
 .blog-post{
     margin-top:30px;
+}
+
+.blog-image-container {
+    width: 100%;
+    height: 300px;
+}
+
+.blog-image{
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    max-width: 100%;
+}
+
+.sticky-footer {
+    background: #555;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+}
+
+.sticky-button{
+    width:120px;
 }

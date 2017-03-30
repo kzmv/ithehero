@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Blog
+
+from .models import *
 
 def index(request):
     intro = Blog.objects.filter(published=True,category="i")[0]
@@ -31,3 +32,26 @@ def project(request,slug):
     projects = Blog.objects.filter(published=True,category="p")
 
     return render(request, 'en/project.html', {'blog': blog, 'projects': projects})
+
+def qr(request):
+    return render(request, 'en/qr.html')
+
+def exhibits(request):
+    exhibits = Exhibit.objects.all()
+    projects = Blog.objects.filter(published=True,category="p")
+
+    return render(request, 'en/exhibits.html', {'exhibits': exhibits, 'projects': projects})
+
+def exhibit(request, slug):
+    exhibit = Exhibit.objects.filter(slug=slug)[0]
+    projects = Blog.objects.filter(published=True,category="p")
+    arts = Art.objects.filter(exhibit=exhibit)
+
+    return render(request, 'en/exhibit.html', {'exhibit': exhibit,'arts':arts, 'projects': projects})
+
+def art(request, slugExhibit, slugArt):
+    exhibit = Exhibit.objects.filter(slug=slugExhibit)[0]
+    art = Art.objects.filter(exhibit=exhibit,slug=slugArt)
+    projects = Blog.objects.filter(published=True,category="p")
+
+    return render(request, 'en/art.html', {'exhibit': exhibit,'art':art, 'projects': projects})

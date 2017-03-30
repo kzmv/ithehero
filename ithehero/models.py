@@ -25,4 +25,23 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-    
+class Exhibit(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=255)
+    description = RichTextField(default="")
+    info = RichTextField()
+    image = models.ImageField(upload_to="images",default="images/noimage.jpg")
+
+    def __str__(self):
+        return self.title
+
+class Art(models.Model):
+    exhibit = models.ForeignKey(Exhibit, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=255)
+    story = RichTextField()
+    info = RichTextField()
+    image = models.ImageField(upload_to="images",default="images/noimage.jpg")
+
+    def __str__(self):
+        return self.title

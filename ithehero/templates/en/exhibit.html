@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="blog-main">
+            <h2 class="blog-post-title">{{exhibit.title}}</h2>
+                <div class="blog-image-container" style="margin-bottom:20px;">
+                    <img class="blog-image" src="{% get_media_prefix %}{{ exhibit.image }}"/>
+                </div>
+                {{exhibit.info|safe}}
+
+            <div class="arts-container">
+                {% for art in arts %}
+                    <div class="art">
+                         <a href="{% url 'art' exhibit.slug art.slug %}">{{ art.title }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div><!-- /.row -->
+</div>
+{% endblock %}
