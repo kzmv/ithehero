@@ -6,38 +6,46 @@
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}"/>
     <meta charset="UTF-8">
     <title>ITheHero</title>
-    <!-- QR LIBS-->
-    <script type="text/javascript" src="{% static 'js/lib/qr/grid.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/version.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/detector.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/formatinf.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/errorlevel.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/bitmat.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/datablock.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/bmparser.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/datamask.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/rsdecoder.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/gf256poly.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/gf256.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/decoder.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/qrcode.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/findpat.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/alignpat.js %}"></script>
-    <script type="text/javascript" src="{% static 'js/lib/qr/databr.js %}"></script>
-    <!-- END QR LIBS-->
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/qr.js' %}"></script>
+
+    <!-- QR LIBS-->
+    <script type="text/javascript" src="{% static 'js/lib/qr/grid.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/version.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/detector.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/formatinf.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/errorlevel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/bitmat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/datablock.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/bmparser.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/datamask.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/rsdecoder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/gf256poly.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/gf256.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/decoder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/qrcode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/findpat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/alignpat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/databr.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/qr/html5-qrcode.min.js'%}"></script>
+
+    <!-- END QR LIBS-->
+
+
+
 </head>
 <body>
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<div class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <a class="navbar-brand"  href="{% url 'home' %}">I, The Hero</a>
+
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand"  href="{% url 'home' %}">I, The Hero</a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -61,7 +69,7 @@
       </li>
     </ul>
   </div>
-</nav>
+</div>
 {% block content %}
 
 
