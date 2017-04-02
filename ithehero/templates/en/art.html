@@ -19,23 +19,23 @@
                 <img class="art-image" src="{% get_media_prefix %}{{ art.company }}"/>
             </div>
 
-            <h2 class="blog-post-title">Art</h2>
+            <h2 id="art" class="blog-post-title">Art</h2>
             <div class="art-picture-container">
                 <img class="art-image" src="{% get_media_prefix %}{{ art.picture }}"/>
             </div>
 
             <div class="blog-post">
-                <h2 class="blog-post-title">Game Information</h2>
+                <h2 id="info" class="blog-post-title">Game Information</h2>
                 {{art.info|safe}}
             </div><!-- /.blog-post -->
 
             <div class="blog-post" >
-                <h2 class="blog-post-title">Story</h2>
+                <h2 id="story" class="blog-post-title">Story</h2>
                 {{art.story|safe}}
             </div><!-- /.blog-post -->
 
             <div class="blog-post" style="margin-bottom: 140px">
-                <h2 class="blog-post-title">Stats</h2>
+                <h2 id="stats" class="blog-post-title">Stats</h2>
                 {{art.stats|safe}}
             </div><!-- /.blog-post -->
         </div><!-- /.row -->
@@ -48,11 +48,11 @@
           Your browser does not support the audio element.
         </audio>
     <div class="btn-group row" style="margin:0 auto;">
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-picture-o fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-info-circle fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-book fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-bar-chart fa-4x" aria-hidden="true"></i></button>
+        <a type="button" class="btn btn-secondary sticky-button"><i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></a>
+        <a href="#art" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-picture-o fa-4x" aria-hidden="true"></i></a>
+        <a href="#info" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-info-circle fa-4x" aria-hidden="true"></i></a>
+        <a href="#story" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-book fa-4x" aria-hidden="true"></i></a>
+        <a href="#stats" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-bar-chart fa-4x" aria-hidden="true"></i></a>
         <a href="{% url 'qr' %}" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-qrcode fa-4x" aria-hidden="true"></i></a>
         <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
     </div>
