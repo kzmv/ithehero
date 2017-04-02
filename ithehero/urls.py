@@ -27,7 +27,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/(?P<slug>[\w\-]+)/$',blog, name='blog'),
     url(r'^blogs/$',blogs, name='blogs'),
+    url(r'^exhibit/(?P<slug>[\w\-]+)/$',exhibit, name='exhibit'),
+    url(r'^exhibits/$',exhibits, name='exhibits'),
+    url(r'^exhibit/(?P<slugExhibit>[\w\-]+)/(?P<slugArt>[\w\-]+)/$',art, name='art'),
     url(r'^about/$',about, name='about'),
+    url(r'^qr/$',qr, name='qr'),
     url(r'^project/(?P<slug>[\w\-]+)/$',project, name='project'),
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,

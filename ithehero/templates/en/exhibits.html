@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="top-buffer"></div>
+    <div class="row">
+
+        <div class="blog-main">
+     {% for exhibit in exhibits %}
+            <div class="summary-card">
+                <div class="summary-title">
+                    <a href="{% url 'exhibit' exhibit.slug %}">{{exhibit.title}}</a>
+                </div>
+                <div class="summary-text row">
+                    <div class="summary-image col-sm-4">
+                        <img class="image" src="{% get_media_prefix %}{{ exhibit.image }}"/>
+                    </div>
+                    <div class="col-sm-7 summary-description">
+                    {{exhibit.description|safe}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

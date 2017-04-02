@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'ckeditor',
+    'ckeditor_uploader',
     # Disable Django's own staticfiles handling in favour of WhiteNoise, for
     # greater consistency between gunicorn and `./manage.py runserver`. See:
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
@@ -50,7 +51,7 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery
 CKEDITOR_SETTINGS = {
     'autoParagraph': False
 }
-
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 MIDDLEWARE_CLASSES = [
