@@ -51,7 +51,7 @@ def exhibit(request, slug):
 
 def art(request, slugExhibit, slugArt):
     exhibit = Exhibit.objects.filter(slug=slugExhibit)[0]
-    art = Art.objects.filter(exhibit=exhibit,slug=slugArt)
+    art = Art.objects.filter(exhibit=exhibit,slug=slugArt)[0]
     projects = Blog.objects.filter(published=True,category="p")
-
-    return render(request, 'en/art.html', {'exhibit': exhibit,'art':art, 'projects': projects})
+    print(art)
+    return render(request, 'en/art.html', {'exhibit': exhibit,'art': art, 'projects': projects})

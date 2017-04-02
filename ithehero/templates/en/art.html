@@ -1,15 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<script>
+    $(document).ready(function(){
+        $(".blog-footer").remove();
+    });
+</script>
 
+    <div class="row" style="margin: 0 auto">
+
+        <div class="col-sm-12 blog-main">
+            <h2 class="blog-post-title">Game</h2>
+            <div class="art-image-container">
+                <img class="art-image" src="{% get_media_prefix %}{{ art.game }}"/>
+            </div>
+            <h2 class="blog-post-title">Company</h2>
+            <div class="art-image-container">
+                <img class="art-image" src="{% get_media_prefix %}{{ art.company }}"/>
+            </div>
+
+            <h2 class="blog-post-title">Art</h2>
+            <div class="art-picture-container">
+                <img class="art-image" src="{% get_media_prefix %}{{ art.picture }}"/>
+            </div>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">Game Information</h2>
+                {{art.info|safe}}
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post" >
+                <h2 class="blog-post-title">Story</h2>
+                {{art.story|safe}}
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post" style="margin-bottom: 140px">
+                <h2 class="blog-post-title">Stats</h2>
+                {{art.stats|safe}}
+            </div><!-- /.blog-post -->
+        </div><!-- /.row -->
+
+    </div>
 <div class="sticky-footer row">
-    <div class="btn-group" style="margin:0 auto;">
+        <audio class="row" style="width:100%; margin-left:10px;margin-right:10px" controls >
+          <source src="{% get_media_prefix %}{{ art.audio }}" type="audio/mp3">
+          <source src="horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+    <div class="btn-group row" style="margin:0 auto;">
         <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></button>
         <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-picture-o fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-book fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-qrcode fa-4x" aria-hidden="true"></i></button>
-        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-bar-chart fa-4x" aria-hidden="true"></i></button>
         <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-info-circle fa-4x" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-book fa-4x" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-bar-chart fa-4x" aria-hidden="true"></i></button>
+        <a href="{% url 'qr' %}" type="button" class="btn btn-secondary sticky-button"><i class="fa fa-qrcode fa-4x" aria-hidden="true"></i></a>
         <button type="button" class="btn btn-secondary sticky-button"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
     </div>
 </div>

@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#reader').html5_qrcode(function(data){
- 		 console.log(data);
+ 		 var params = data.split(" ");
+ 		    window.location.href = "http://"+window.location.host + "/exhibit/" + params[0] +"/" + params[1] +"/";
  	},
  	function(error){
 		//show read errors
