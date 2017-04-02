@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
+    url(r'^filebrowser_filer/', include('ckeditor_filebrowser_filer.urls')),
     url(r'$', index, name="home")
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
